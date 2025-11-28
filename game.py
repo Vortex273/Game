@@ -1,12 +1,11 @@
 import random
-import sqlite3
-import subprocess
 import sys
-
+from PySide6.QtWidgets import QLabel, QPushButton, QVBoxLayout
+import subprocess
+import sqlite3
 from PyQt6.QtCore import Qt, QRect
 from PyQt6.QtGui import QPixmap, QPainter, QColor
 from PyQt6.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget, QPushButton
-from PySide6.QtWidgets import QLabel, QPushButton, QVBoxLayout
 
 picture = ["6fb53e16-7b8e-4431-ae44-053b0b9abc42-fotor-20251123349512.jpg",
            "6fb53e16-7b8e-4431-ae44-053b0b9abc42-fotor-2025112334956.png"]
@@ -298,9 +297,9 @@ class ImageOverlayApp(QWidget):
         if self.before_bottle != []:
             if self.before_bottle != self.last_bottle:
                 if set(self.before_color) != {"#FFFFFF"}:
-                    self.hod_num += 1
-                    self.swap_colors(self.before_bottle, self.last_bottle)
-                    self.update_background()
+                     self.hod_num += 1
+                     self.swap_colors(self.before_bottle, self.last_bottle)
+                     self.update_background()
 
     def swap_colors(self, num1, num2):
         a = self.colors[num1]
@@ -375,7 +374,7 @@ class ImageOverlayApp(QWidget):
     def check_win(self):
         if len(set(self.colors[0])) == len(set(self.colors[1])) == len(set(self.colors[2])) == len(
                 set(self.colors[3])) == len(set(self.colors[4])) == len(set(self.colors[5])) == len(
-            set(self.colors[6])) == len(set(self.colors[7])) == 1:
+                set(self.colors[6])) == len(set(self.colors[7])) == 1:
             self.open_second_form()
             self.close()
 
