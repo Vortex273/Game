@@ -58,7 +58,7 @@ class Example(QMainWindow):
                 con = sqlite3.connect("liquids_sort_puzzle_database.sqlite")
                 cur = con.cursor()
                 cur.execute(f"""UPDATE player SET id_player = '{z[0][0]}'""").fetchall()
-                process = subprocess.Popen([sys.executable, "start_game.py"])
+                process = subprocess.Popen([sys.executable, "game.py"])
                 con.commit()
                 con.close()
                 sys.exit(app.exec())
