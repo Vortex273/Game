@@ -432,7 +432,7 @@ class SecondForm(QWidget):
         self.close()
 
     def new_game(self):
-        process = subprocess.Popen([sys.executable, "start_game.py"])
+        process = subprocess.Popen([sys.executable, "game.py"])
         self.close()
 
 
